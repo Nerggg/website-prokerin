@@ -1,12 +1,12 @@
 import React from "react";
 import Logo from "../../Assets/General/logo.svg";
-import { mdiComment } from "@mdi/js";
+import { mdiComment, mdiRepeatVariant, mdiShareOutline } from "@mdi/js";
 import Icon from "@mdi/react";
 
 const ProkerCard = () => {
   return (
     <div className="my-7">
-      <div className=" w-auto mx-10 border-black border-2 rounded-t-xl pt-12 px-36 ">
+      <div className=" w-auto mx-10 border-black border-b-white border-2 rounded-t-xl pt-12 px-36 ">
         <div className="flex flex-row my-6">
           <img
             src={Logo}
@@ -41,15 +41,27 @@ const ProkerCard = () => {
           sometimes on purpose (injected humour and the like).
         </div>
       </div>
-      <div className="border-b-black  border-x-black border-2 rounded-b-xl  w-auto mx-10 grid grid-cols-3">
-        <div className="items-center">
-          <Icon className="text-black " path={mdiComment} size={2} />{" "}
+      <div className="border-y-black  border-x-black border-2 rounded-b-xl  w-auto mx-10 grid grid-cols-3">
+        <div className="col-span-1 border-r-2 border-black ">
+          <Icon
+            className="text-black mx-auto my-1"
+            path={mdiComment}
+            size={2}
+          />{" "}
         </div>
-        <div>
-          <Icon className="text-black " path={mdiComment} size={2} />{" "}
+        <div className="col-span-1 border-r-2 border-black">
+          <Icon
+            className="text-black mx-auto my-1"
+            path={mdiRepeatVariant}
+            size={2}
+          />{" "}
         </div>
-        <div>
-          <Icon className="text-black " path={mdiComment} size={2} />{" "}
+        <div className="col-span-1">
+          <Icon
+            className="text-black mx-auto my-1"
+            path={mdiShareOutline}
+            size={2}
+          />{" "}
         </div>
       </div>
     </div>

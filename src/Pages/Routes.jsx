@@ -23,7 +23,7 @@ const AppRoutes = () => {
               element: <HomePage />,
             },
             {
-              path: "/dashboard/:id",
+              path: "/proker/:id",
               element: <HomeDetailPage />,
             },
           ],
