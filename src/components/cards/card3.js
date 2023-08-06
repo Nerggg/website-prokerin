@@ -1,15 +1,15 @@
-import React from '../../assets/card/react.png'
+import Vue from '../../assets/card/vue.png'
 import Icon from '@mdi/react';
 import { mdiCommentPlusOutline } from '@mdi/js';
 
-function Card1() {
+function Card3() {
   return (
     <div className="flex w-[80%] h-auto bg-white ml-[3%] drop-shadow-md rounded-xl mt-[40px] p-[20px]">
       <div className="flex flex-col">
         <div className="flex">
-          <img src={React} className="w-auto h-[80px]" />
+          <img src={Vue} className="w-auto h-[80px]" />
           <div className="flex flex-col">
-            <div className="px-[10px] pt-[10px] font-bold">React Organization</div>
+            <div className="px-[10px] pt-[10px] font-bold">Vue Organization</div>
             <div className="px-[10px]">Melakukan kunjungan/studi banding ke organisasi lain</div>
           </div>
         </div>
@@ -26,4 +26,4 @@ function Card1() {
   );
 }
 
-export default Card1;
+export default Card3;
