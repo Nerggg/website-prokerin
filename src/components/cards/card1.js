@@ -18,7 +18,7 @@ function Card1() {
         <div className="flex">
           <Icon path={mdiCommentPlusOutline} className="mt-[10px] w-auto h-[25px]"/>
           <div className="mt-[6px] ml-[2%] h-[35px] w-full bg-white rounded-lg border-black border">
-            <input className="mx-[2px] mt-[4px] w-[95%] outline-none" placeholder="Add comment"/>
+            <input className="mx-[4px] mt-[4px] w-[95%] outline-none" placeholder="Add comment"/>
           </div>
         </div>
       </div>

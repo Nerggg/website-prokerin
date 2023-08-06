@@ -21,7 +21,7 @@ function SideBar() {
   };
 
   return (
-    <div className="h-auto w-[13%] bg-white">
+    <div className="h-auto w-[13%] bg-white border-black border-r">
       <img src={Logo} className="px-[15%] pt-[50px]" />
       <div className="flex flex-col pt-[60%] items-center">
         <Icon path={mdiHome} className="px-[37%] text-red-400"/>

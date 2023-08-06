@@ -10,15 +10,16 @@ function AddProker() {
   };
 
   return (
-    <div className="flex bg-gray-100">
+    <div className="flex">
       <SideBar />
       <div className="w-screen pb-[30px]">
         <div className="ml-[3%] mt-[40px] font-bold">Your organization already exist?</div>
           <div className="ml-[3%] w-[60%] h-[35px] rounded-lg bg-white border border-black">
-            <input className="ml-[1%] pt-[5px] pl-[5px] w-[95%] outline-none" placeholder="Search for exiting organization"/>
+            <input className="ml-[1%] pt-[5px] pl-[5px] w-[95%] outline-none" placeholder="Search for existing organization"/>
           </div>
-        <p className="text-center font-bold mt-4">Upload your organization logo</p>
-        <div className="flex justify-center mt-4">
+      <div className="my-[30px] w-full h-[3px] bg-gray-200 rounded-full" />
+        <p className="ml-[3%] font-bold mt-4">Upload your organization logo</p>
+        <div className="ml-[3%] flex mt-[5px]">
           <input
             type="file"
             accept="image/*"
@@ -30,6 +31,21 @@ function AddProker() {
             <img src={URL.createObjectURL(selectedFile)} alt="Uploaded Logo" className="max-w-full h-auto" />
           </div>
         )}
+        <div className="my-[30px] w-full h-[3px] bg-gray-200 rounded-full" />
+        <div className="ml-[3%] font-bold">Enter your organization name</div>
+          <div className="ml-[3%] w-[60%] h-[35px] rounded-lg bg-white border border-black">
+            <input className="ml-[1%] pt-[5px] pl-[5px] w-[95%] outline-none" placeholder="Organization name"/>
+          </div>
+      <div className="my-[30px] w-full h-[3px] bg-gray-200 rounded-full" />
+        <div className="ml-[3%] font-bold">Enter the Proker's title</div>
+          <div className="ml-[3%] w-[60%] h-[35px] rounded-lg bg-white border border-black">
+            <input className="ml-[1%] pt-[5px] pl-[5px] w-[95%] outline-none" placeholder="Proker's title"/>
+          </div>
+      <div className="my-[30px] w-full h-[3px] bg-gray-200 rounded-full" />
+        <div className="ml-[3%] font-bold">Enter the Proker's content</div>
+          <div className="ml-[3%] w-[60%] h-[185px] rounded-lg bg-white border border-black">
+            <textarea className="ml-[1%] pt-[5px] pl-[5px] w-[95%] h-[180px] outline-none" placeholder="Proker's content"></textarea>
+          </div>
       </div>
     </div>
   );
