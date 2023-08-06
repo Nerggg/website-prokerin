@@ -1,16 +1,15 @@
-import Logo from '../../assets/general/prokerinLogo.png'
-import React, { Component } from 'react';
-import Icon from '@mdi/react';
-import {mdiHome} from '@mdi/js';
+import SideBar from '../../components/sidebar/sidebar'
+import Card1 from '../../components/cards/card1'
 
 function Main() {
   return (
-    <div className="w-screen h-screen bg-gray-100">
-      <div className="h-screen w-[13%] bg-white">
-        <img src={Logo} className="px-[15%] pt-[50px]" />
-        <div className="flex flex-col">
- 
-        </div>
+    <div className="flex bg-gray-100">
+      <SideBar />
+      <div className="w-screen pb-[30px]">
+        <Card1 />
+        <Card1 />
+        <Card1 />
+        <Card1 />
       </div>
     </div>
   );
