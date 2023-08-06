@@ -46,6 +46,11 @@ function AddProker() {
           <div className="ml-[3%] w-[60%] h-[185px] rounded-lg bg-white border border-black">
             <textarea className="ml-[1%] pt-[5px] pl-[5px] w-[95%] h-[180px] outline-none" placeholder="Proker's content"></textarea>
           </div>
+        <button
+          type="submit"
+          className="ml-[3%] w-[40%] h-[45px] bg-red-500 text-white rounded-full flex justify-center items-center mt-[40px]">
+          Add proker
+        </button>
       </div>
     </div>
   );
