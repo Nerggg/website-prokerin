@@ -14,8 +14,8 @@ function Home() {
             <div className="text-[18px] text-gray-700 pl-[10%] pt-[26px] w-[90%]">Your one-stop destination for sharing and discovering reviews on various programs, organizations, and campus activities at ITB.</div>
             <div className="w-[120px] h-[40px] bg-red-400 rounded-full flex justify-center items-center text-white ml-[10%] mt-[26px]">Learn More</div>
         </div>
-        <div className="mt-[-50px]">
-            <img src={Bubble} alt="homepage" className=""/>
+        <div className="mt-[-10%]">
+            <img src={Bubble} alt="homepage" className="absolute w-[50%] h-auto"/>
         </div>
       </div>
     </div>
