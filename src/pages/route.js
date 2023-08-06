@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom/client';
 import Home from './homePage/home'
 import SignIn from './signIn/signIn'
 import SignUp from './signUp/signUp'
+import Profile from './profile/profile'
 
 function Routing() {
   return (
@@ -12,6 +13,7 @@ function Routing() {
         <Route path="/" element={<Home /> } /> 
         <Route path="/signin" element={<SignIn /> } /> 
         <Route path="/signup" element={<SignUp /> } /> 
+        <Route path="/profile" element={<Profile /> } /> 
       </Routes>
     </BrowserRouter>    
   );
