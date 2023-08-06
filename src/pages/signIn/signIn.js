@@ -11,6 +11,10 @@ function SignIn() {
     navigate('/signup');
   };
 
+  const handleLogin = () => {
+    navigate('/main');
+  };
+
   return (
     <div className="grid grid-cols-2">
       <div className="flex flex-col">
@@ -23,7 +27,7 @@ function SignIn() {
         <img src={Paper} className="absolute ml-[35%] mt-[40px] w-[40%] h-auto" />
         <button
           type="submit"
-          className="ml-[10%] w-[50%] h-[45px] bg-red-500 text-white rounded-full flex justify-center items-center mt-[40px]">
+          className="ml-[10%] w-[50%] h-[45px] bg-red-500 text-white rounded-full flex justify-center items-center mt-[40px]" onClick={handleLogin} >
           Login
         </button>
       </div>
