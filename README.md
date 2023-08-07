@@ -1,70 +1,44 @@
-# Getting Started with Create React App
+# ProkerIn
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+ProkerIn is a community-based open platform that aims to be one-stop destination for sharing and discovering reviews on various programs, organizations, and campus activities at ITB. 
 
-## Available Scripts
 
-In the project directory, you can run:
+# Kelompok Milestone SPARTA 17 
 
-### `npm start`
+Anggota kelompok 
+Enrique Yanuar			        (19622015), Back-end
+Regina Deva Carissa         	(19622031)
+Aththariq Lisan Q. D. S.		(19622037), UI/UX
+Axelius Davin			        (19622069), Front-end
+Natanael Steven Simangunsong	(19622072)
+Muhammad Rafli Rasyiidin	    (19622120)
+Muhammad Rafly			        (19622137)
+Yovanka Sandrina Maharaja	    (19622146), Read Me
+Shulha				            (19622181), RTead Me
+Berto Richardo Togatorop		(19622192)
+Ikhwan Al Hakim			        (19622278), Back-end, Front-end, Read Me
+Atqiya Haydar Luqman		    (19622283), Front-end
+Ahmad Thoriq Saputra        	(19622305), Front-end
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+# Deskripsi Masalah
+        Masalah yang menjadi alasan utama adalah kurangnya media penyampaian informasi mengenai program kerja suatu organisasi dari berbagai sudut pandang. Informasi yang kurang mendalam dan hanya disampaikan dari satu sudut pandang akan menyebabkan calon anggota organisasi kesulitan dalam menentukan keputusan untuk bergabung dalam organisasi. Hal ini dapat menjadi tantangan tersendiri, terutama jika seseorang merasa ragu-ragu tentang apakah organisasi tersebut sesuai dengan minatnya atau tidak. Masalah ini akan berujung pada kurangnya partisipasi dan minat mahasiswa dalam hal lain di luar akademik, khususnya organisasi.
+        Di sisi lain, akan ada massa yang memutuskan tetap bergabung dalam organisasi tanpa mempertimbangkan visi, misi, dan tujuan organisasi dalam jangka panjang. Seiring berjalannya waktu, mereka akan merasa tidak sesuai dengan lingkungan dan tujuan organisasi sehingga kesulitan untuk berkomitmen dalam jangka waktu yang lama. Kebanyakan dari mereka pada akhirnya memilih keluar dari organisasi sebelum masa jabatan berakhir, dan meninggalkan tanggung jawab yang seharusnya mereka emban. Namun ada juga yang tetap bertahan menjadi bagian dari organisasi, tetapi kurang memiliki semangat dan dedikasi penuh dalam melaksanakan tugas dan proyek yang diberikan.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Cara Menggunakan ProkerIn
 
-### `npm run build`
+## Menjalankan Web ProkerIn
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Melakukan Sign Up dan Sign In
+Tekan tombol "Sign Up"
+Masukkan email dan password yang diinginkan
+Tekan "Create an account"
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Melihat Review 
+Tekan tombol "Sign In"
+Masukkan email dan password yang diinginkan
+Tekan "Create an account"
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Mengunggah Review di Web ProkerIn
