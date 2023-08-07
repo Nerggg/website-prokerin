@@ -21,7 +21,7 @@ function SideBar() {
   };
 
   return (
-    <div className="fixed h-screen w-[13%] bg-white border-red-400 border-r">
+    <div className="fixed h-screen w-[13%] bg-white border-red-400 border-r z-50">
       <img src={Logo} className="px-[15%] pt-[50px]" />
       <div className="flex flex-col pt-[60%] items-center">
         <Icon path={mdiHome} className="mx-[37%] text-gray-500 cursor-pointer" onClick={handleHomeClick}/>
