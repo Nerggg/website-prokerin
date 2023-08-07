@@ -29,9 +29,9 @@ function SideBar() {
         <Icon path={mdiMagnify} className="px-[37%] text-gray-500" />
         <div className="pb-[40px] text-gray-500 text-[14px]">Search</div>
         <Icon path={mdiAccountCircleOutline} className="mx-[37%] text-gray-500 cursor-pointer" onClick={handleProfileClick} />
-        <div className="pb-[40px] text-gray-500 cursor-pointer text-[14px]" onClick={handleProfileClick}>Profile</div>
-        <Icon path={mdiPlusBox} className="mx-[37%] text-red-400 cursor-pointer" />
-        <div className="text-red-400 font-bold text-[14px] cursor-pointer">Add Proker</div>
+        <div className="mb-[40px] text-gray-500 cursor-pointer text-[14px]" onClick={handleProfileClick}>Profile</div>
+        <Icon path={mdiPlusBox} className="mx-[37%] text-red-400" />
+        <div className="text-red-400 font-bold text-[14px]">Add Proker</div>
       </div>
     </div>
   );

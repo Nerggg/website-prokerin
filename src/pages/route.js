@@ -5,7 +5,6 @@ import Home from './homePage/home'
 import SignIn from './signIn/signIn'
 import SignUp from './signUp/signUp'
 import Main from './mainPage/main'
-import Overview from './organizationOverview/overview'
 import AddProker from './addProker/addProker'
 import Profile from './profile/profile'
 
@@ -17,7 +16,6 @@ function Routing() {
         <Route path="/signin" element={<SignIn /> } /> 
         <Route path="/signup" element={<SignUp /> } /> 
         <Route path="/main" element={<Main /> } /> 
-        <Route path="/overview" element={<Overview /> } /> 
         <Route path="/addproker" element={<AddProker /> } /> 
         <Route path="/profile" element={<Profile /> } /> 
       </Routes>
