@@ -12,7 +12,7 @@ function AddProker() {
   return (
     <div className="flex">
       <SideBar />
-      <div className="w-screen pb-[30px]">
+      <div className="ml-[13%] w-screen pb-[30px]">
         <div className="ml-[3%] mt-[40px] font-bold">Your organization already exist?</div>
           <div className="ml-[3%] w-[60%] h-[35px] rounded-lg bg-white border border-black">
             <input className="ml-[1%] pt-[5px] pl-[5px] w-[95%] outline-none" placeholder="Search for existing organization"/>
