@@ -1,4 +1,4 @@
-import Header from "../../components/header/headerHome";
+import Header from "../../components/header/HeaderHome";
 import Bubble from "../../assets/home/chatBubble.png";
 
 function Home() {

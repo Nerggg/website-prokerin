@@ -1,8 +1,8 @@
-import SideBar from "../../components/sidebar/sidebarHome";
-import Card1 from "../../components/cards/card1";
-import Card2 from "../../components/cards/card2";
-import Card3 from "../../components/cards/card3";
-import Ad from "../../components/advertisement/ad";
+import SideBar from "../../components/sidebar/SidebarHome";
+import Card1 from "../../components/cards/Card1";
+import Card2 from "../../components/cards/Card2";
+import Card3 from "../../components/cards/Card3";
+import Ad from "../../components/advertisement/Ad";
 
 function Main() {
   return (

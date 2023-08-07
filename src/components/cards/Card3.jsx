@@ -1,18 +1,18 @@
-import Svelte from "../../assets/card/svelte.png";
-import Comment1 from "../comments/comment1";
-import Comment2 from "../comments/comment2";
+import Vue from "../../assets/card/vue.png";
+import Comment1 from "../comments/Comment1";
+import Comment2 from "../comments/Comment2";
 import Icon from "@mdi/react";
 import { mdiCommentPlusOutline } from "@mdi/js";
 
-function Card2() {
+function Card3() {
   return (
     <div className="flex w-[70%] h-auto bg-white ml-[16%] drop-shadow-md rounded-xl mt-[40px] p-[20px]">
       <div className="flex flex-col">
         <div className="flex">
-          <img src={Svelte} className="w-auto h-[80px]" />
+          <img src={Vue} className="w-auto h-[80px]" />
           <div className="flex flex-col">
             <div className="px-[10px] pt-[10px] font-bold">
-              Svelte Organization
+              Vue Organization
             </div>
             <div className="px-[10px]">
               Melakukan kunjungan/studi banding ke organisasi lain
@@ -44,4 +44,4 @@ function Card2() {
   );
 }
 
-export default Card2;
+export default Card3;

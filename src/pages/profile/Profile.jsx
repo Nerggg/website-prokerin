@@ -1,7 +1,7 @@
 // import components
-import SideBar from "../../components/sidebar/sidebarProfile";
+import SideBar from "../../components/sidebar/SidebarProfile";
 import Icon from "@mdi/react";
-import { mdiAccountCircleOutline, mdiCog } from "@mdi/js";
+import { mdiAccountCircleOutline, mdiCog, mdiLogout } from "@mdi/js";
 // import image
 import OSKM from "../../assets/profile/364256865_248657837983541_8565579273458325146_n.jpg";
 import TedX from "../../assets/profile/277033832_157081526714819_5698156830627029686_n.jpg";
@@ -9,6 +9,7 @@ import OlimKM from "../../assets/profile/325414680_459310653069504_3639164702027
 import CDT from "../../assets/profile/339478730_600595242126812_687436227528523438_n.jpg";
 import GaneshaS from "../../assets/profile/117724415_183733966470862_4511932069592667694_n.jpg";
 import TPBCup from "../../assets/profile/310041451_586614173223916_1851230247954833645_n.jpg";
+import useStore from "../Store";
 
 const benefit = [
   {
@@ -85,6 +86,10 @@ const proker = [
 ];
 
 function Profile() {
+  const { logout } = useStore();
+  const logOut = () => {
+    logout();
+  };
   return (
     <div className="flex flex-col">
       <SideBar />
@@ -94,7 +99,11 @@ function Profile() {
           className="w-auto h-[60px] ml-[1%]"
         />
         <div className="ml-[1%]">John Doe</div>
-        <Icon path={mdiCog} className="w-auto h-[45px] ml-[80%]" />
+        <Icon
+          path={mdiLogout}
+          onClick={logOut}
+          className="w-auto h-[45px] ml-[80%]"
+        />
       </div>
       <div className="w-screen flex flex-col items-center overflow-x-hidden pt-20">
         <div className="mt-[10px] flex flex-col mb-12">

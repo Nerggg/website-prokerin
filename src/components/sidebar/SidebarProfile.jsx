@@ -7,6 +7,7 @@ import {
   mdiPlusBox,
 } from "@mdi/js";
 import { useNavigate } from "react-router-dom";
+import useStore from "../../pages/Store";
 
 function SideBar() {
   const navigate = useNavigate();

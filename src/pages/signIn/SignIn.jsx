@@ -1,17 +1,20 @@
-import Form from "../../components/form/form";
+import Form from "../../components/form/Form";
 import Logo from "../../assets/general/prokerinLogo.png";
 import Paper from "../../assets/sign/loginPaper.png";
 import { useNavigate } from "react-router-dom";
+import useStore from "../Store";
+import { Login } from "../Function";
 
-function SignUp() {
+function SignIn() {
+  const { user, login } = useStore();
   const navigate = useNavigate();
-
-  const handleInClick = () => {
-    navigate("/signin");
+  const handleUpClick = () => {
+    navigate("/signup");
   };
 
-  const handleLogin = () => {
+  const onSubmit = (data) => {
     navigate("/main");
+    login(data);
   };
 
   return (
@@ -19,29 +22,29 @@ function SignUp() {
       <div className="flex flex-col">
         <div className="flex items-center w-full h-[50px]">
           <span className="ml-[10%] pt-[140px] text-[16px] text-gray-400">
-            Have an account?
+            Don't have an account?
           </span>
           <span
             className="ml-[4px] mt-[140px] text-[16px] text-red-400 cursor-pointer z-50"
-            onClick={handleInClick}
+            onClick={handleUpClick}
           >
-            {" "}
-            Sign In
+            Sign Up
           </span>
         </div>
         <img src={Logo} className="w-[256px] h-[50px] mt-[110px] ml-[10%]" />
-        <Form />
+        <Form onSubmit={onSubmit}>
+          <button
+            type="submit"
+            className="ml-[10%] w-[50%] h-[45px] bg-red-500 text-white rounded-full flex justify-center items-center mt-[40px]"
+            // onClick={onSUmbit}
+          >
+            Login
+          </button>
+        </Form>
         <img
           src={Paper}
           className="absolute ml-[35%] mt-[40px] w-[40%] h-auto"
         />
-        <button
-          type="submit"
-          className="ml-[10%] w-[50%] h-[45px] bg-red-500 text-white rounded-full flex justify-center items-center mt-[40px]"
-          onClick={handleLogin}
-        >
-          Create an account
-        </button>
       </div>
       <div className="ml-[10%] h-screen bg-red-400">
         <div className="pt-[130px] pr-[70px]">
@@ -66,4 +69,4 @@ function SignUp() {
   );
 }
 
-export default SignUp;
+export default SignIn;

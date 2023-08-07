@@ -1,6 +1,6 @@
 import React from "../../assets/card/react.png";
-import Comment1 from "../comments/comment1";
-import Comment2 from "../comments/comment2";
+import Comment1 from "../comments/Comment1";
+import Comment2 from "../comments/Comment2";
 import Icon from "@mdi/react";
 import { mdiCommentPlusOutline } from "@mdi/js";
 

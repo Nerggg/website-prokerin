@@ -1,17 +1,22 @@
-import Form from "../../components/form/form";
 import Logo from "../../assets/general/prokerinLogo.png";
 import Paper from "../../assets/sign/loginPaper.png";
 import { useNavigate } from "react-router-dom";
+import Form from "../../components/form/Form";
+import FormRegister from "../../components/form/FormRegister";
+import useStore from "../Store";
 
-function SignIn() {
+function SignUp() {
+  const { register } = useStore();
   const navigate = useNavigate();
 
-  const handleUpClick = () => {
-    navigate("/signup");
+  const handleInClick = () => {
+    navigate("/signin");
   };
 
-  const handleLogin = () => {
-    navigate("/main");
+  const onSubmit = (data) => {
+    console.log(data);
+    register(data);
+    // navigate("/main");
   };
 
   return (
@@ -19,28 +24,29 @@ function SignIn() {
       <div className="flex flex-col">
         <div className="flex items-center w-full h-[50px]">
           <span className="ml-[10%] pt-[140px] text-[16px] text-gray-400">
-            Don't have an account?
+            Have an account?
           </span>
           <span
             className="ml-[4px] mt-[140px] text-[16px] text-red-400 cursor-pointer z-50"
-            onClick={handleUpClick}
+            onClick={handleInClick}
           >
-            Sign Up
+            {" "}
+            Sign In
           </span>
         </div>
         <img src={Logo} className="w-[256px] h-[50px] mt-[110px] ml-[10%]" />
-        <Form />
+        <FormRegister onSubmit={onSubmit}>
+          <button
+            type="submit"
+            className="ml-[10%] w-[50%] h-[45px] bg-red-500 text-white rounded-full flex justify-center items-center mt-[40px]"
+          >
+            Create an account
+          </button>
+        </FormRegister>
         <img
           src={Paper}
           className="absolute ml-[35%] mt-[40px] w-[40%] h-auto"
         />
-        <button
-          type="submit"
-          className="ml-[10%] w-[50%] h-[45px] bg-red-500 text-white rounded-full flex justify-center items-center mt-[40px]"
-          onClick={handleLogin}
-        >
-          Login
-        </button>
       </div>
       <div className="ml-[10%] h-screen bg-red-400">
         <div className="pt-[130px] pr-[70px]">
@@ -65,4 +71,4 @@ function SignIn() {
   );
 }
 
-export default SignIn;
+export default SignUp;
