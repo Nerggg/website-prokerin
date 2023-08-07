@@ -1,8 +1,8 @@
-import React from '../../assets/card/react.png'
-import Comment1 from '../comments/comment1'
-import Comment2 from '../comments/comment2'
-import Icon from '@mdi/react';
-import { mdiCommentPlusOutline } from '@mdi/js';
+import React from "../../assets/card/react.png";
+import Comment1 from "../comments/comment1";
+import Comment2 from "../comments/comment2";
+import Icon from "@mdi/react";
+import { mdiCommentPlusOutline } from "@mdi/js";
 
 function Card1() {
   return (
@@ -11,18 +11,32 @@ function Card1() {
         <div className="flex">
           <img src={React} className="w-auto h-[80px]" />
           <div className="flex flex-col">
-            <div className="px-[10px] pt-[10px] font-bold">React Organization</div>
-            <div className="px-[10px]">Melakukan kunjungan/studi banding ke organisasi lain</div>
+            <div className="px-[10px] pt-[10px] font-bold">
+              React Organization
+            </div>
+            <div className="px-[10px]">
+              Melakukan kunjungan/studi banding ke organisasi lain
+            </div>
           </div>
         </div>
-        <div className="pt-[10px]">Tujuan: Mendapatkan ilmu baru dan membandingkan metode pengerjaan.</div>
-        <div className="pt-[10px]">Kegiatan: Berkunjung ke organisasi lain pada tanggal 20 setiap bulan.</div>
+        <div className="pt-[10px]">
+          Tujuan: Mendapatkan ilmu baru dan membandingkan metode pengerjaan.
+        </div>
+        <div className="pt-[10px]">
+          Kegiatan: Berkunjung ke organisasi lain pada tanggal 20 setiap bulan.
+        </div>
         <Comment1 />
         <Comment2 />
         <div className="flex">
-          <Icon path={mdiCommentPlusOutline} className="mt-[10px] w-auto h-[25px]"/>
+          <Icon
+            path={mdiCommentPlusOutline}
+            className="mt-[10px] w-auto h-[25px]"
+          />
           <div className="mt-[6px] ml-[2%] h-[35px] w-full bg-white rounded-lg border-black border">
-            <input className="mx-[4px] mt-[4px] w-[95%] outline-none" placeholder="Add comment"/>
+            <input
+              className="mx-[4px] mt-[4px] w-[95%] outline-none"
+              placeholder="Add comment"
+            />
           </div>
         </div>
       </div>
