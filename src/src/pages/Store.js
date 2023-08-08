@@ -44,12 +44,14 @@ const useStore = create(
           console.log("ini", data);
         });
       },
-      fetchProkerList: (data) => {
-        set(
-          produce((state) => {
-            state.proker.list = data;
-          })
-        );
+      fetchProkerList: (token) => {
+        fetchData("proker", null, "GET", token).then((data) => {
+          set(
+            produce((state) => {
+              state.proker.list = data.data;
+            })
+          );
+        });
       },
       fetchProkerDetail: (data) => {
         set(

@@ -8,9 +8,8 @@ function AddProker() {
   const navigate = useNavigate();
   const { user, createProker } = useStore();
   const [base64Image, setBase64Image] = useState("");
-  const onSUmbit = (data) => {
-    var datares = data;
-    const file = data.image[0];
+  const handlerImage = (data) => {
+    const file = data;
     var image = "";
 
     if (file) {
@@ -22,7 +21,10 @@ function AddProker() {
       };
       reader.readAsDataURL(file);
     }
-    datares = { ...data, image: image };
+  };
+  const onSUmbit = (data) => {
+    var datares = data;
+    datares = { ...data, image: base64Image };
     console.log(datares);
     createProker(datares, user?.access_token);
     navigate("/main");
@@ -32,7 +34,7 @@ function AddProker() {
       <SideBar />
 
       <div className="ml-[13%] w-screen pb-[30px]">
-        <FormProker onSubmit={onSUmbit}>
+        <FormProker onSubmit={onSUmbit} imageHanddler={handlerImage}>
           <button
             type="submit"
             className="ml-[3%] w-[40%] h-[45px] bg-red-500 text-white rounded-full flex justify-center items-center mt-[40px]"

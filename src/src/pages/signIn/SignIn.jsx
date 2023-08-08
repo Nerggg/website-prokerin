@@ -3,7 +3,6 @@ import Logo from "../../assets/general/prokerinLogo.png";
 import Paper from "../../assets/sign/loginPaper.png";
 import { useNavigate } from "react-router-dom";
 import useStore from "../Store";
-import { Login } from "../Function";
 
 function SignIn() {
   const { user, login } = useStore();

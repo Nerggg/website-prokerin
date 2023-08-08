@@ -3,8 +3,21 @@ import Card1 from "../../components/cards/Card1";
 import Card2 from "../../components/cards/Card2";
 import Card3 from "../../components/cards/Card3";
 import Ad from "../../components/advertisement/Ad";
+import useStore from "../Store";
+import { useEffect } from "react";
+import ProkerCard from "../../components/cards/ProkerCard";
 
 function Main() {
+  const { user, proker, fetchProkerList } = useStore();
+  useEffect(() => {
+    fetchProkerList(user?.access_token);
+  }, []);
+  console.log(proker);
+  if (!proker?.list) {
+    return null;
+  }
+  const data = proker?.list;
+  console.log(data);
   return (
     <div className="flex bg-gray-100">
       <SideBar />
@@ -22,9 +35,9 @@ function Main() {
             Selected Proker
           </span>
         </div>
-        <Card1 />
-        <Card2 />
-        <Card3 />
+        {data?.map((data) => (
+          <ProkerCard {...data} />
+        ))}
       </div>
       <Ad />
     </div>
