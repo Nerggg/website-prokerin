@@ -20,53 +20,114 @@ const useStore = create(
       },
       login: (data) => {
         // console.log("disni", data);
-        fetchData("auth/login", data, "POST").then((data) => {
-          console.log("ini", data);
-          if (data.success) {
-            set(
-              produce((state) => {
-                state.user = data.data;
-                state.isLogin = true;
-              })
-            );
-          }
-        });
+        fetchData("auth/login", data, "POST")
+          .then((data) => {
+            console.log("ini", data);
+            if (data.success) {
+              set(
+                produce((state) => {
+                  state.user = data.data;
+                  state.isLogin = true;
+                })
+              );
+            }
+          })
+          .catch((err) => {
+            console.log(err);
+          });
       },
       register: (data) => {
         // console.log("disni", data);
-        fetchData("auth/register", data, "POST").then((data) => {
-          console.log("ini", data);
-        });
+        fetchData("auth/register", data, "POST")
+          .then((data) => {
+            console.log("ini", data);
+          })
+          .catch((err) => {
+            console.log(err);
+          });
       },
+
       proker: Default,
       createProker: (data, token) => {
-        fetchData("proker", data, "POST", token).then((data) => {
-          console.log("ini", data);
-        });
+        fetchData("proker", data, "POST", token)
+          .then((data) => {
+            console.log("ini", data);
+          })
+          .catch((err) => {
+            console.log(err);
+          });
       },
       fetchProkerList: (token) => {
-        fetchData("proker", null, "GET", token).then((data) => {
-          set(
-            produce((state) => {
-              state.proker.list = data.data;
-            })
-          );
-        });
-      },
-      fetchProkerDetail: (data) => {
-        set(
-          produce((state) => {
-            state.proker.current = data;
+        fetchData("proker", null, "GET", token)
+          .then((data) => {
+            if (data?.success) {
+              set(
+                produce((state) => {
+                  state.proker.list = data.data;
+                })
+              );
+            }
           })
-        );
+          .catch((err) => {
+            console.log(err);
+          });
       },
-      comment: [],
-      fetchCommentList: (data) => {
-        set(
-          produce((state) => {
-            state.comment = data;
+      fetchProkerDetail: (token, id) => {
+        fetchData(`proker/${id}`, null, "GET", token)
+          .then((data) => {
+            if (data?.success) {
+              set(
+                produce((state) => {
+                  state.proker.current = data.data;
+                })
+              );
+            }
           })
-        );
+          .catch((err) => {
+            console.log(err);
+          });
+      },
+
+      comments: Default,
+      createComment: async (data, token, id) => {
+        fetchData(`comment/${id}`, data, "POST", token)
+          .then((data) => {
+            console.log("ini", data);
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+      },
+      fetchCommentList: (token) => {
+        fetchData("comment", null, "GET", token)
+          .then((data) => {
+            if (data?.success) {
+              set(
+                produce((state) => {
+                  state.comments.list = data.data;
+                })
+              );
+            }
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+      },
+      fetchCommentDetail: (token, id) => {
+        fetchData(`comment/${id}`, null, "GET", token)
+          .then((data) => {
+            console.log("ini", data);
+            if (data?.success) {
+              set(
+                produce((state) => {
+                  state.comments.list = data.data;
+                })
+              );
+            }
+          })
+          .catch((err) => {
+            console.log(err);
+          });
       },
       //   count: 0,
       //   increment: () =>

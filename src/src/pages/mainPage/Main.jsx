@@ -36,10 +36,10 @@ function Main() {
           </span>
         </div>
         {data?.map((data) => (
-          <ProkerCard {...data} />
+          <ProkerCard data={data} />
         ))}
       </div>
-      <Ad />
+      {/* <Ad /> */}
     </div>
   );
 }

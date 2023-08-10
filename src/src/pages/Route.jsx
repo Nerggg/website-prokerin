@@ -8,6 +8,7 @@ import Main from "./mainPage/Main";
 import AddProker from "./addProker/AddProker";
 import Profile from "./profile/Profile";
 import useStore from "./Store";
+import MainDetail from "./mainPage/MainDetail";
 
 function Routing() {
   const { isLogin, user } = useStore();
@@ -25,6 +26,7 @@ function Routing() {
         <Routes>
           <Route path="*" element={<Main />} />
           <Route path="/main" element={<Main />} />
+          <Route path="/main/:id" element={<MainDetail />} />
           <Route path="/addproker" element={<AddProker />} />
           <Route path="/profile" element={<Profile />} />
         </Routes>
