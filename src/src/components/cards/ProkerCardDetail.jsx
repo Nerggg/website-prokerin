@@ -25,7 +25,7 @@ const ProkerCardDetail = ({ children, data, isDetail = false }) => {
             <img src={data?.image} alt="foto" className="object-cover " />
           </div>
           <div className="px-3 text-justify">{data?.description}</div>
-
+          <div className="px-3 font-bold text-lg">Comments</div>
           {children}
         </div>
       </div>

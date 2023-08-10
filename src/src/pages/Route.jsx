@@ -32,10 +32,10 @@ const AppRoutes = () => {
               path: "/main",
               element: <Main />,
             },
-            {
-              path: "/main/:id",
-              element: <MainDetail />,
-            },
+            // {
+            //   path: "/main/:id",
+            //   element: <MainDetail />,
+            // },
             {
               path: "/addproker",
               element: <AddProker />,

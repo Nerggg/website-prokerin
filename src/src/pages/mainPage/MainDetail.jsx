@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import useStore from "../Store";
 import ProkerCard from "../../components/cards/ProkerCard";
 import { useNavigate, useParams } from "react-router";
@@ -7,8 +7,8 @@ import { mdiSendVariant } from "@mdi/js";
 import Icon from "@mdi/react";
 import Comment from "../../components/comments/Comment";
 import ProkerCardDetail from "../../components/cards/ProkerCardDetail";
-
-const MainDetail = () => {
+import { Dialog, Transition } from "@headlessui/react";
+const MainDetail = ({ id }) => {
   const {
     user,
     proker,
@@ -17,7 +17,7 @@ const MainDetail = () => {
     fetchCommentDetail,
     createComment,
   } = useStore();
-  let { id } = useParams();
+  //   let { id } = useParams();
   useEffect(() => {
     fetchProkerDetail(user?.access_token, id);
     fetchCommentDetail(user?.access_token, id);
@@ -27,8 +27,8 @@ const MainDetail = () => {
     // console.log("ini:", data);
     createComment(data, user?.access_token, id).then((data) => {
       console.log("pmpp");
-      //   fetchCommentDetail(user?.access_token, id);
-      window.location.reload();
+      fetchCommentDetail(user?.access_token, id);
+      //   window.location.reload();
     });
   };
 
@@ -38,7 +38,7 @@ const MainDetail = () => {
   const data = proker?.current;
   const data_comments = comments?.list;
   return (
-    <div className="w-2/5">
+    <div className="">
       <div className="flex bg-gray-100 min-h-screen">
         <div>
           <ProkerCardDetail data={data}>

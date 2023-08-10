@@ -81,53 +81,73 @@ const proker = [
     year: "2023",
     exp: "4 Month Exp.",
   },
+  {
+    id: 7,
+    name: "TPB Cup",
+    image: TPBCup,
+    position: "Coordinator",
+    year: "2023",
+    exp: "4 Month Exp.",
+  },
+  {
+    id: 8,
+    name: "TPB Cup",
+    image: TPBCup,
+    position: "Coordinator",
+    year: "2023",
+    exp: "4 Month Exp.",
+  },
+  {
+    id: 9,
+    name: "TPB Cup",
+    image: TPBCup,
+    position: "Coordinator",
+    year: "2023",
+    exp: "4 Month Exp.",
+  },
 ];
 
 function Profile() {
-  const { logout } = useStore();
+  const { user, logout } = useStore();
+  console.log(user);
   const logOut = () => {
     logout();
   };
   return (
     <div className="flex flex-col">
-      <div className="ml-[14%] flex items-center py-[10px]">
-        <Icon
-          path={mdiAccountCircleOutline}
-          className="w-auto h-[60px] ml-[1%]"
-        />
-        <div className="ml-[1%]">John Doe</div>
+      <div className="flex items-center py-[10px]">
+        <Icon path={mdiAccountCircleOutline} className="w-auto h-[60px] " />
+        <div className="ml-[1%]">{user.user.nick_name}</div>
         <Icon
           path={mdiLogout}
           onClick={logOut}
-          className="w-auto h-[45px] ml-[80%]"
+          className="w-auto h-[45px] ml-auto"
         />
       </div>
-      <div className="w-screen flex flex-col items-center overflow-x-hidden pt-20">
+      <div className="flex flex-col items-center overflow-x-hidden pt-20">
         <div className="mt-[10px] flex flex-col mb-12">
           <p className="text-4xl font-semibold">Activities</p>
           <div className="flex items-center">
             <div className="h-[8px] bg-red-400 w-[100px] rounded-full mt-4"></div>
             <div className="h-[2px] bg-gray-500 w-[90%] rounded-full mt-4"></div>
           </div>
-          <div className="mt-8 grid grid-cols-3 gap-x-4 gap-y-4 ">
+          <div className="mt-8 grid grid-cols-1 mx-8 lg:grid-cols-2 2xl:grid-cols-3   gap-x-4 gap-y-4 ">
             {proker.map((item, index) => {
               return (
-                <div className="rounded-[10px] border-2 border-gray-100 w-[300px] h-[100px] shadow-lg flex justify-between px-2 cursor-pointer">
+                <div
+                  key={item.id}
+                  className="rounded-[10px] border-2 border-gray-100 w-[400px] h-[133px] shadow-lg flex justify-between px-2 cursor-pointer"
+                >
                   <div className="flex items-center ml-2">
-                    <img
-                      src={item.image}
-                      className="h-[50px] w-[50px] rounded-full"
-                    />
+                    <img src={item.image} className="h-16 w-16 rounded-full" />
                     <div className="ml-2">
-                      <p className="font-semibold">{item.name}</p>
-                      <p className="text-[12px] text-gray-500">
-                        {item.position}
-                      </p>
+                      <p className="text-xl font-semibold">{item.name}</p>
+                      <p className="text-base text-gray-500">{item.position}</p>
                     </div>
                   </div>
                   <div className="flex flex-col justify-center items-end">
-                    <p className="text-[14px] font-semibold">{item.year}</p>
-                    <p className="text-[12px] text-gray-500">{item.exp}</p>
+                    <p className="text-xl font-semibold">{item.year}</p>
+                    <p className="text-base text-gray-500">{item.exp}</p>
                   </div>
                 </div>
               );

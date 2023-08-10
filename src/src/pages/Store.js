@@ -9,6 +9,7 @@ const useStore = create(
     (set) => ({
       isLogin: false,
       user: null,
+      comments: Default,
       logout: () => {
         set(
           produce((state) => {
@@ -88,7 +89,13 @@ const useStore = create(
           });
       },
 
-      comments: Default,
+      resetComments: () => {
+        set(
+          produce((state) => {
+            state.comments.list = null;
+          })
+        );
+      },
       createComment: async (data, token, id) => {
         fetchData(`comment/${id}`, data, "POST", token)
           .then((data) => {
