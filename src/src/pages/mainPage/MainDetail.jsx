@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import SideBar from "../../components/sidebar/SidebarHome";
 import useStore from "../Store";
 import ProkerCard from "../../components/cards/ProkerCard";
 import { useNavigate, useParams } from "react-router";
@@ -7,6 +6,7 @@ import FormComment from "../../components/form/FormComment";
 import { mdiSendVariant } from "@mdi/js";
 import Icon from "@mdi/react";
 import Comment from "../../components/comments/Comment";
+import ProkerCardDetail from "../../components/cards/ProkerCardDetail";
 
 const MainDetail = () => {
   const {
@@ -38,24 +38,24 @@ const MainDetail = () => {
   const data = proker?.current;
   const data_comments = comments?.list;
   return (
-    <div className="flex bg-gray-100 min-h-screen">
-      <div>
-        <SideBar />
-
-        <ProkerCard data={data}>
-          {data_comments?.map((item) => (
-            <Comment {...item} />
-          ))}
-          <FormComment onSubmit={onSubmit}>
-            <button type="submit">
-              <Icon
-                path={mdiSendVariant}
-                className="mt-[10px] w-auto h-[25px] ml-3"
-                type={"submit"}
-              />
-            </button>
-          </FormComment>
-        </ProkerCard>
+    <div className="w-2/5">
+      <div className="flex bg-gray-100 min-h-screen">
+        <div>
+          <ProkerCardDetail data={data}>
+            {data_comments?.map((item) => (
+              <Comment {...item} />
+            ))}
+            <FormComment onSubmit={onSubmit}>
+              <button type="submit">
+                <Icon
+                  path={mdiSendVariant}
+                  className="mt-[10px] w-auto h-[25px] ml-3"
+                  type={"submit"}
+                />
+              </button>
+            </FormComment>
+          </ProkerCardDetail>
+        </div>
       </div>
     </div>
   );

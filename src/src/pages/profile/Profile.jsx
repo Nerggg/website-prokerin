@@ -1,5 +1,3 @@
-// import components
-import SideBar from "../../components/sidebar/SidebarProfile";
 import Icon from "@mdi/react";
 import { mdiAccountCircleOutline, mdiCog, mdiLogout } from "@mdi/js";
 // import image
@@ -92,7 +90,6 @@ function Profile() {
   };
   return (
     <div className="flex flex-col">
-      <SideBar />
       <div className="ml-[14%] flex items-center py-[10px]">
         <Icon
           path={mdiAccountCircleOutline}

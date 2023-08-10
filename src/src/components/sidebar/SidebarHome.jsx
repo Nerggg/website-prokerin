@@ -23,7 +23,7 @@ function SideBar() {
   };
 
   return (
-    <div className="fixed h-screen w-[13%] bg-white border-red-400 border-r z-50">
+    <div className="fixed h-screen w-[10%] bg-white border-red-400 border-r z-50">
       <img src={Logo} className="px-[15%] pt-[50px]" />
       <div className="flex flex-col pt-[60%] items-center">
         <Icon

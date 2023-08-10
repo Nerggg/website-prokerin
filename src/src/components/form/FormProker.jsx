@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { useForm } from "react-hook-form";
+import { Controller, useForm } from "react-hook-form";
+import { Listbox } from "@headlessui/react";
 
 const FormProker = ({ children, onSubmit, imageHanddler }) => {
   const [selectedFile, setSelectedFile] = useState(null);
@@ -11,13 +12,15 @@ const FormProker = ({ children, onSubmit, imageHanddler }) => {
   };
   const {
     register,
+    control,
     handleSubmit,
     formState: { errors },
   } = useForm();
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <form onSubmit={handleSubmit(onSubmit)} className="pb-9">
+      <div className="ml-[3%] font-bold text-5xl mt-6">Proker Form</div>
       <div className="my-[30px] w-full h-[3px] bg-gray-200 rounded-full" />
-      <p className="ml-[3%] font-bold mt-4">Upload your image's proker </p>
+      <p className="ml-[3%] font-bold mb-2 mt-4">Upload your image's proker </p>
       <div className="ml-[3%] flex mt-[5px]">
         <input
           required={true}
@@ -37,10 +40,31 @@ const FormProker = ({ children, onSubmit, imageHanddler }) => {
         </div>
       )}
       <div className="my-[30px] w-full h-[3px] bg-gray-200 rounded-full" />
-      <div className="ml-[3%] font-bold">
+      <div className="ml-[3%] font-bold mb-2">Select Organization</div>
+      <div className="ml-[3%] h-[35px] ">
+        <Controller
+          name="organization"
+          control={control}
+          defaultValue="" // Set the initial value
+          render={({ field }) => (
+            <select
+              className="ml-[1%] p-[5px] w-[98%] rounded-lg bg-white border border-black"
+              {...field}
+            >
+              <option value="option1">option 1</option>
+              <option value="option2">option 2</option>
+              <option value="option3">option 3</option>
+              {/* jangan lupa diganti */}
+            </select>
+          )}
+        />
+      </div>
+
+      <div className="my-[30px] w-full h-[3px] bg-gray-200 rounded-full" />
+      <div className="ml-[3%] font-bold mb-2">
         Enter the Proker's short description
       </div>
-      <div className="ml-[3%] w-[60%] h-[35px] rounded-lg bg-white border border-black">
+      <div className="ml-[3%] h-[35px] rounded-lg bg-white border border-black">
         <input
           required={true}
           {...register("short_descrip[tion")}
@@ -48,9 +72,10 @@ const FormProker = ({ children, onSubmit, imageHanddler }) => {
           placeholder="Proker's short description"
         />
       </div>
+
       <div className="my-[30px] w-full h-[3px] bg-gray-200 rounded-full" />
-      <div className="ml-[3%] font-bold">Enter the Proker's name</div>
-      <div className="ml-[3%] w-[60%] h-[35px] rounded-lg bg-white border border-black">
+      <div className="ml-[3%] font-bold mb-2">Enter the Proker's name</div>
+      <div className="ml-[3%] h-[35px] rounded-lg bg-white border border-black">
         <input
           required={true}
           {...register("name")}
@@ -58,9 +83,10 @@ const FormProker = ({ children, onSubmit, imageHanddler }) => {
           placeholder="Proker's title"
         />
       </div>
+
       <div className="my-[30px] w-full h-[3px] bg-gray-200 rounded-full" />
-      <div className="ml-[3%] font-bold">Enter the Proker's content</div>
-      <div className="ml-[3%] w-[60%] h-[185px] rounded-lg bg-white border border-black">
+      <div className="ml-[3%] font-bold mb-2">Enter the Proker's content</div>
+      <div className="ml-[3%] h-[185px] rounded-lg bg-white border border-black">
         <textarea
           required={true}
           {...register("description")}

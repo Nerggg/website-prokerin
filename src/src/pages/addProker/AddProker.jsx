@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import SideBar from "../../components/sidebar/SidebarAddProker";
 import FormProker from "../../components/form/FormProker";
 import useStore from "../Store";
 import { useNavigate } from "react-router-dom";
@@ -26,23 +25,19 @@ function AddProker() {
     var datares = data;
     datares = { ...data, image: base64Image };
     console.log(datares);
-    createProker(datares, user?.access_token);
-    navigate("/main");
+    // createProker(datares, user?.access_token);
+    // navigate("/main");
   };
   return (
-    <div className="flex">
-      <SideBar />
-
-      <div className="ml-[13%] w-screen pb-[30px]">
-        <FormProker onSubmit={onSUmbit} imageHanddler={handlerImage}>
-          <button
-            type="submit"
-            className="ml-[3%] w-[40%] h-[45px] bg-red-500 text-white rounded-full flex justify-center items-center mt-[40px]"
-          >
-            Add proker
-          </button>
-        </FormProker>
-      </div>
+    <div className=" w-2/3  ">
+      <FormProker onSubmit={onSUmbit} imageHanddler={handlerImage}>
+        <button
+          type="submit"
+          className="ml-auto w-40 h-[45px] bg-red-500 text-white rounded-full flex justify-center items-center mt-[40px] "
+        >
+          Add proker
+        </button>
+      </FormProker>
     </div>
   );
 }

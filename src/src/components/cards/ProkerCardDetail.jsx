@@ -3,15 +3,15 @@ import Icon from "@mdi/react";
 import { mdiAccountCircleOutline } from "@mdi/js";
 import { useNavigate } from "react-router";
 
-const ProkerCard = ({ children, data, isDetail = false }) => {
-  const navigate = useNavigate();
+const ProkerCardDetail = ({ children, data, isDetail = false }) => {
+  // const navigate = useNavigate();
   return (
     <div className="min-h-[720px]">
       <div className="flex  h-full bg-white drop-shadow-md rounded-xl p-[20px]">
         <div className="flex flex-col space-y-5 min-w-full">
           <div
             className="flex cursor-pointer space-x-3"
-            onClick={() => navigate(`./${data.id}`)}
+            // onClick={() => navigate(`./${data.id}`)}
           >
             <Icon path={mdiAccountCircleOutline} className=" w-auto h-[80px]" />
             <div className="flex flex-col ">
@@ -24,7 +24,7 @@ const ProkerCard = ({ children, data, isDetail = false }) => {
           <div className="  flex justify-center">
             <img src={data?.image} alt="foto" className="object-cover " />
           </div>
-          <div className=" line-clamp-6">{data?.description}</div>
+          <div className="px-3 text-justify">{data?.description}</div>
 
           {children}
         </div>
@@ -33,4 +33,4 @@ const ProkerCard = ({ children, data, isDetail = false }) => {
   );
 };
 
-export default ProkerCard;
+export default ProkerCardDetail;
