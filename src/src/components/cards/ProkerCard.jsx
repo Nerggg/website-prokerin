@@ -42,7 +42,11 @@ const ProkerCard = ({ children, data, isDetail = false }) => {
             <div className=" h-96  flex justify-center">
               <img src={data?.image} alt="foto" className="object-cover " />
             </div>
-            <div className="text-justify line-clamp-6">{data?.description}</div>
+            {/* <div dangerouslySetInnerHTML={{ __html: data?.description }} /> */}
+            <div
+              className="text-justify line-clamp-6"
+              dangerouslySetInnerHTML={{ __html: data?.description }}
+            />
 
             {children}
           </div>

@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 import { Listbox } from "@headlessui/react";
+import ReactQuill from "react-quill";
+import "react-quill/dist/quill.snow.css";
 
 const FormProker = ({ children, onSubmit, imageHanddler }) => {
   const [selectedFile, setSelectedFile] = useState(null);
+  const [value, setValue] = useState("");
 
   const handleFileChange = (event) => {
     const file = event.target.files[0];
@@ -86,13 +89,26 @@ const FormProker = ({ children, onSubmit, imageHanddler }) => {
 
       <div className="my-[30px] w-full h-[3px] bg-gray-200 rounded-full" />
       <div className="ml-[3%] font-bold mb-2">Enter the Proker's content</div>
-      <div className="ml-[3%] h-[185px] rounded-lg bg-white border border-black">
-        <textarea
+      <div className="ml-[3%] quill-container max-h-[400px] overflow-y-auto">
+        {/* <textarea
           required={true}
           {...register("description")}
           className="ml-[1%] pt-[5px] pl-[5px] w-[98%] h-[180px] outline-none"
           placeholder="Proker's content"
-        ></textarea>
+        ></textarea> */}
+        <Controller
+          name="description"
+          control={control}
+          defaultValue=""
+          render={({ field }) => (
+            <ReactQuill
+              className="overflow-auto"
+              value={field.value}
+              onChange={field.onChange}
+              onBlur={field.onBlur}
+            />
+          )}
+        />
       </div>
       {children}
     </form>

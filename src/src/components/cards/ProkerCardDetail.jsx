@@ -4,6 +4,7 @@ import { mdiAccountCircleOutline } from "@mdi/js";
 import { useNavigate } from "react-router";
 
 const ProkerCardDetail = ({ children, data, isDetail = false }) => {
+  console.log("iniii", data?.description);
   // const navigate = useNavigate();
   return (
     <div className="min-h-full">
@@ -19,12 +20,15 @@ const ProkerCardDetail = ({ children, data, isDetail = false }) => {
               <div className="line-clamp-1">{data?.short_description}</div>
             </div>
           </div>
-          <div className="  flex justify-center">
+          <div className="flex justify-center">
             <img src={data?.image} alt="foto" className="object-cover " />
           </div>
-          <div className="px-3 text-justify overflow-auto ">
-            {data?.description}
-          </div>
+          <div
+            className="px-7 overflow-auto "
+            dangerouslySetInnerHTML={{
+              __html: data?.description,
+            }}
+          />
           <div className="px-3 font-bold text-lg">Comments</div>
           {children}
         </div>
