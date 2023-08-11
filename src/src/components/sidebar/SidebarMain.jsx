@@ -9,8 +9,10 @@ import {
 import { useNavigate } from "react-router-dom";
 import useStore from "../../pages/Store";
 import { useState } from "react";
+import { Popover } from "@headlessui/react";
 
 function SideBarMain() {
+  const { user } = useStore();
   const navigate = useNavigate();
   const [page, setPage] = useState({
     home: false,
@@ -45,7 +47,7 @@ function SideBarMain() {
   };
 
   return (
-    <div className=" h-screen w-[14%] bg-white border-red-400 border-r z-50">
+    <div className=" h-screen flex flex-col  w-[14%] bg-white border-red-400 border-r z-50">
       <img src={Logo} className="px-[15%] pt-[50px]" />
       <div className="hidden 2xl:flex 2xl:flex-col pt-[60%] space-y-7 px-[15%] ">
         <div className="flex items-center">
@@ -137,6 +139,34 @@ function SideBarMain() {
             onClick={handleAddProker}
           />
         </div>
+      </div>
+      <div className="flex flex-col items-center mt-auto mb-4 outline-none">
+        <Popover className="relative">
+          <Popover.Button>
+            <div className="flex items-center space-x-3 ">
+              <Icon
+                path={mdiAccountCircleOutline}
+                className="w-auto h-[60px]"
+              />
+              <div className="">{user.user.nick_name}</div>
+            </div>
+          </Popover.Button>
+
+          <Popover.Panel
+            className={`absolute z-10 ${
+              false ? "top-0" : "-top-full"
+            } right-0 mt-2`}
+          >
+            <div className="grid grid-cols-2">
+              <a href="/analytics">Analytics</a>
+              <a href="/engagement">Engagement</a>
+              <a href="/security">Security</a>
+              <a href="/integrations">Integrations</a>
+            </div>
+
+            <img src="/solutions.jpg" alt="" />
+          </Popover.Panel>
+        </Popover>
       </div>
     </div>
   );

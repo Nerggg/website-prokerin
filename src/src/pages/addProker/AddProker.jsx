@@ -25,8 +25,8 @@ function AddProker() {
     var datares = data;
     datares = { ...data, image: base64Image };
     console.log(datares);
-    // createProker(datares, user?.access_token);
-    // navigate("/main");
+    createProker(datares, user?.access_token);
+    navigate("/main");
   };
   return (
     <div className=" w-2/3  ">

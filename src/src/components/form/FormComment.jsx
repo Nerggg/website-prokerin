@@ -14,12 +14,12 @@ const FormComment = ({ children, onSubmit, imageHanddler }) => {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <div className="flex">
+      <div className="flex ">
         <Icon
           path={mdiCommentPlusOutline}
           className="mt-[10px] w-auto h-[25px]"
         />
-        <div className="mt-[6px] ml-[2%] h-[35px] w-1/3 bg-white rounded-lg border-black border">
+        <div className="mt-[6px] ml-[2%] h-[35px] w-2/3 bg-white rounded-lg border-black border">
           <input
             className="mx-[4px] mt-[4px] w-[95%] outline-none"
             placeholder="Add comment"

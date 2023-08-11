@@ -23,8 +23,8 @@ const ProkerCard = ({ children, data, isDetail = false }) => {
   return (
     <>
       <div className="min-h-[720px]">
-        <div className="flex  h-full bg-white drop-shadow-md rounded-xl p-[20px]">
-          <div className="flex flex-col space-y-5 min-w-full">
+        <div className="flex  h-full bg-white drop-shadow-md rounded-xl pt-8 ">
+          <div className="px-10 flex flex-col space-y-5 min-w-full">
             <div
               className="flex cursor-pointer space-x-3"
               // onClick={() => navigate(`./${data.id}`)}
@@ -36,15 +36,13 @@ const ProkerCard = ({ children, data, isDetail = false }) => {
               />
               <div className="flex flex-col ">
                 <div className="text-2xl pt-[10px] font-bold">{data?.name}</div>
-                <div className="line-clamp-1">
-                  {data?.short_description}asdasdasdasdasdasdasdasdasdasd
-                </div>
+                <div className="line-clamp-1">{data?.short_description}</div>
               </div>
             </div>
-            <div className="  flex justify-center">
+            <div className=" h-96  flex justify-center">
               <img src={data?.image} alt="foto" className="object-cover " />
             </div>
-            <div className=" line-clamp-6">{data?.description}</div>
+            <div className="text-justify line-clamp-6">{data?.description}</div>
 
             {children}
           </div>

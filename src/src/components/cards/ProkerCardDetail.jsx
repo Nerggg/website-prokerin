@@ -16,9 +16,7 @@ const ProkerCardDetail = ({ children, data, isDetail = false }) => {
             <Icon path={mdiAccountCircleOutline} className=" w-auto h-[80px]" />
             <div className="flex flex-col ">
               <div className="text-2xl pt-[10px] font-bold">{data?.name}</div>
-              <div className="line-clamp-1">
-                {data?.short_description}asdasdasdasdasdasdasdasdasdasd
-              </div>
+              <div className="line-clamp-1">{data?.short_description}</div>
             </div>
           </div>
           <div className="  flex justify-center">

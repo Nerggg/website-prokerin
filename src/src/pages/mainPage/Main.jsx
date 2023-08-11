@@ -23,12 +23,12 @@ function Main() {
           The Right Place to See A Working Program
         </p>
       </div>
-      <div className="px-3 py-2">
+      <div className="px-10 py-2">
         <div className="py-2 ">
           <div className="bg-red-400 w-[26%] pb-1  h-auto flex justify-center items-center drop-shadow-md rounded-xl">
-            <span className="font-bold text-white text-[44px]">
+            <div className="font-bold text-white text-[44px]">
               Selected Proker
-            </span>
+            </div>
           </div>
         </div>
         <div className="grid grid-cols-2 gap-5 ">

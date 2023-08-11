@@ -43,13 +43,13 @@ const MainDetail = ({ id }) => {
         <div>
           <ProkerCardDetail data={data}>
             {data_comments?.map((item) => (
-              <Comment {...item} />
+              <Comment data={item} user={user} />
             ))}
             <FormComment onSubmit={onSubmit}>
               <button type="submit">
                 <Icon
                   path={mdiSendVariant}
-                  className="mt-[10px] w-auto h-[25px] ml-3"
+                  className=" w-auto h-[25px] ml-3"
                   type={"submit"}
                 />
               </button>
