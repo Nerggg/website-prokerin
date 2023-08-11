@@ -55,7 +55,7 @@ const MainDetail = ({ id }) => {
   return (
     <div className="">
       <div className="flex bg-gray-100 min-h-screen">
-        <div>
+        <div className="w-full min-h-full">
           <ProkerCardDetail key={data?.id} data={data}>
             {data_comments?.map((item) => (
               <Comment
