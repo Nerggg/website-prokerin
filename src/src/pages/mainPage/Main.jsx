@@ -7,12 +7,10 @@ function Main() {
   useEffect(() => {
     fetchProkerList(user?.access_token);
   }, [fetchProkerList, user?.access_token]);
-  console.log(proker);
   if (!proker?.list) {
     return null;
   }
   const data = proker?.list;
-  console.log(data);
   return (
     <div className="">
       <div className=" bg-red-400 w-full py-8 text-white flex justify-around items-center flex-col">

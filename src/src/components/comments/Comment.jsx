@@ -8,21 +8,18 @@ import {
 } from "@mdi/js";
 import { useEffect, useState } from "react";
 
-function Comment({ data, user }) {
-  const [liked, setLiked] = useState(false);
+function Comment({ data, user, like, unlike }) {
+  const [liked, setLiked] = useState(data.liked?.[user?.user?.id] ?? false);
   const [numLike, setNumLike] = useState(data?.like);
-
-  useEffect(() => {
-    if (data?.id == "0891d017-1152-4287-a61c-d3a000efe42f") {
-      setLiked(true);
-    }
-  }, []);
+  console.log(user);
 
   const onPresLove = () => {
     if (!liked) {
       setNumLike(numLike + 1);
+      like(data?.id);
     } else {
       setNumLike(numLike > 0 ? numLike - 1 : 0);
+      unlike(data?.id);
     }
     setLiked(!liked);
   };
@@ -39,7 +36,11 @@ function Comment({ data, user }) {
             className="w-[40px] h-[40px] rounded-full object-cover"
           />
           {/* <div className="flex items-center"> */}
-          <div className="px-[10px] pb-1 text-[14px] font-bold">Anonym</div>
+          <div className="px-[10px] pb-1 text-[14px] font-bold">
+            {data?.id_creator == user?.user?.id
+              ? user?.user?.nick_name
+              : "Anonym"}
+          </div>
           {/* </div> */}
           <div className="ml-auto flex flex-col items-center">
             <Icon

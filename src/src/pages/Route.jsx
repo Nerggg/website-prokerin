@@ -50,11 +50,11 @@ const AppRoutes = () => {
     : [
         {
           path: "*",
-          element: <Navigate to="/signin" replace />,
+          element: <Navigate to="/home" replace />,
         },
         {
           path: "/",
-          element: <Navigate to="/signin" replace />,
+          element: <Navigate to="/home" replace />,
         },
         {
           path: "/home",

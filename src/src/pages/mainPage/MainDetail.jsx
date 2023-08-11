@@ -15,35 +15,56 @@ const MainDetail = ({ id }) => {
     comments,
     fetchProkerDetail,
     fetchCommentDetail,
+    commentLike,
+    commentUnlike,
     createComment,
+    resetComments,
   } = useStore();
   //   let { id } = useParams();
   useEffect(() => {
     fetchProkerDetail(user?.access_token, id);
     fetchCommentDetail(user?.access_token, id);
+    return () => {
+      resetComments();
+    };
   }, []);
-  const navigate = useNavigate();
+
+  const data = proker?.current;
+  const data_comments = comments?.list;
+
   const onSubmit = (data) => {
-    // console.log("ini:", data);
     createComment(data, user?.access_token, id).then((data) => {
       console.log("pmpp");
       fetchCommentDetail(user?.access_token, id);
-      //   window.location.reload();
     });
+  };
+
+  const onLike = (id) => {
+    console.log(id);
+    commentLike(user?.access_token, data?.id, id);
+  };
+  const onUnlike = (id) => {
+    console.log(id);
+    commentUnlike(user?.access_token, data?.id, id);
   };
 
   if (!proker?.current) {
     return null;
   }
-  const data = proker?.current;
-  const data_comments = comments?.list;
+
   return (
     <div className="">
       <div className="flex bg-gray-100 min-h-screen">
         <div>
-          <ProkerCardDetail data={data}>
+          <ProkerCardDetail key={data?.id} data={data}>
             {data_comments?.map((item) => (
-              <Comment data={item} user={user} />
+              <Comment
+                key={item?.id}
+                data={item}
+                user={user}
+                like={onLike}
+                unlike={onUnlike}
+              />
             ))}
             <FormComment onSubmit={onSubmit}>
               <button type="submit">

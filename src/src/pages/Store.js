@@ -49,6 +49,7 @@ const useStore = create(
       },
 
       proker: Default,
+
       createProker: (data, token) => {
         fetchData("proker", data, "POST", token)
           .then((data) => {
@@ -136,25 +137,46 @@ const useStore = create(
             console.log(err);
           });
       },
-      //   count: 0,
-      //   increment: () =>
-      //     set(
-      //       produce((state) => {
-      //         state.count += 1;
-      //       })
-      //     ),
-      //   decrement: () =>
-      //     set(
-      //       produce((state) => {
-      //         state.count -= 1;
-      //       })
-      //     ),
-      //   customFunction: (newValue) =>
-      //     set(
-      //       produce((state) => {
-      //         state.count += newValue;
-      //       })
-      //     ),
+      commentLike: (token, proker_id, comment_id) => {
+        fetchData(
+          `comment/${proker_id}/${comment_id}/like`,
+          null,
+          "GET",
+          token
+        );
+        // .then((data) => {
+        //   if (data?.success) {
+        //     set(
+        //       produce((state) => {
+        //         state.comments.list = data.data;
+        //       })
+        //     );
+        //   }
+        // })
+        // .catch((err) => {
+        //   console.log(err);
+        // });
+      },
+      commentUnlike: (token, proker_id, comment_id) => {
+        fetchData(
+          `comment/${proker_id}/${comment_id}/unlike`,
+          null,
+          "GET",
+          token
+        );
+        // .then((data) => {
+        //   if (data?.success) {
+        //     set(
+        //       produce((state) => {
+        //         state.comments.list = data.data;
+        //       })
+        //     );
+        //   }
+        // })
+        // .catch((err) => {
+        //   console.log(err);
+        // });
+      },
     }),
     {
       name: "zustand-example", // Key to use for localStorage
