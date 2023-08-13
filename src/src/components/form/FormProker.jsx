@@ -70,7 +70,7 @@ const FormProker = ({ children, onSubmit, imageHanddler }) => {
       <div className="ml-[3%] h-[35px] rounded-lg bg-white border border-black">
         <input
           required={true}
-          {...register("short_descrip[tion")}
+          {...register("short_description")}
           className="ml-[1%] pt-[5px] pl-[5px] w-[95%] outline-none"
           placeholder="Proker's short description"
         />

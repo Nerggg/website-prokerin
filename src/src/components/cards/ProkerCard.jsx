@@ -44,7 +44,7 @@ const ProkerCard = ({ children, data, isDetail = false }) => {
             </div>
             {/* <div dangerouslySetInnerHTML={{ __html: data?.description }} /> */}
             <div
-              className="text-justify line-clamp-6"
+              className="text-justify line-clamp-6 px-7 break-words"
               dangerouslySetInnerHTML={{ __html: data?.description }}
             />
 

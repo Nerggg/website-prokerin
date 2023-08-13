@@ -11,13 +11,14 @@ import useStore from "../../pages/Store";
 import { useState } from "react";
 import { Popover } from "@headlessui/react";
 
-function SideBarMain() {
+function SideBarMain({}) {
   const { user } = useStore();
   const navigate = useNavigate();
+  const url = window.location.pathname;
   const [page, setPage] = useState({
-    home: false,
-    profile: false,
-    proker: false,
+    home: url == "/main" ? true : false,
+    profile: url == "/profile" ? true : false,
+    proker: url == "/proker" ? true : false,
   });
 
   const handleAddProker = () => {
