@@ -42,26 +42,6 @@ const FormProker = ({ children, onSubmit, imageHanddler }) => {
           />
         </div>
       )}
-      <div className="my-[30px] w-full h-[3px] bg-gray-200 rounded-full" />
-      <div className="ml-[3%] font-bold mb-2">Select Organization</div>
-      <div className="ml-[3%] h-[35px] ">
-        <Controller
-          name="organization"
-          control={control}
-          defaultValue="" // Set the initial value
-          render={({ field }) => (
-            <select
-              className="ml-[1%] p-[5px] w-[98%] rounded-lg bg-white border border-black"
-              {...field}
-            >
-              <option value="option1">option 1</option>
-              <option value="option2">option 2</option>
-              <option value="option3">option 3</option>
-              {/* jangan lupa diganti */}
-            </select>
-          )}
-        />
-      </div>
 
       <div className="my-[30px] w-full h-[3px] bg-gray-200 rounded-full" />
       <div className="ml-[3%] font-bold mb-2">

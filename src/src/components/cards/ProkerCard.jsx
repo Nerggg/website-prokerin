@@ -23,7 +23,7 @@ const ProkerCard = ({ children, data, isDetail = false }) => {
   return (
     <>
       <div className="min-h-[720px]">
-        <div className="flex  h-full bg-white drop-shadow-md rounded-xl pt-8 ">
+        <div className=" py-10 flex  h-full bg-white drop-shadow-md rounded-xl pt-8 ">
           <div className="px-10 flex flex-col space-y-5 min-w-full">
             <div
               className="flex cursor-pointer space-x-3"
@@ -39,8 +39,12 @@ const ProkerCard = ({ children, data, isDetail = false }) => {
                 <div className="line-clamp-1">{data?.short_description}</div>
               </div>
             </div>
-            <div className=" h-96  flex justify-center">
-              <img src={data?.image} alt="foto" className="object-cover " />
+            <div className=" min-h-96  ">
+              <img
+                src={data?.image}
+                alt="foto"
+                className="object-cover h-full w-full "
+              />
             </div>
             {/* <div dangerouslySetInnerHTML={{ __html: data?.description }} /> */}
             <div
