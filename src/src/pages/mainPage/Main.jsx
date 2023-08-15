@@ -23,13 +23,13 @@ function Main() {
       </div>
       <div className="px-10 py-2">
         <div className="py-2 ">
-          <div className="bg-red-400 w-[26%] pb-1  h-auto flex justify-center items-center drop-shadow-md rounded-xl">
-            <div className="font-bold text-white text-[44px]">
+          <div className="bg-red-400 w-[19%] pb-1 my-[2rem] ml-[1rem]  h-auto flex justify-center items-center drop-shadow-md rounded-xl">
+            <div className="font-bold text-white text-[2rem]">
               Selected Proker
             </div>
           </div>
         </div>
-        <div className="grid grid-cols-2 gap-5 ">
+        <div className="grid grid-cols-2 gap-5 drop-shadow-xl">
           {data?.map((data) => (
             <ProkerCard key={data.id} data={data} />
           ))}
