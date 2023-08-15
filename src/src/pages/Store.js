@@ -19,7 +19,7 @@ const useStore = create(
           })
         );
       },
-      login: (data) => {
+      login: async (data) => {
         // console.log("disni", data);
         fetchData("auth/login", data, "POST")
           .then((data) => {
@@ -37,7 +37,7 @@ const useStore = create(
             console.log(err);
           });
       },
-      register: (data) => {
+      register: async (data) => {
         // console.log("disni", data);
         fetchData("auth/register", data, "POST")
           .then((data) => {

@@ -12,8 +12,11 @@ function SignIn() {
   };
 
   const onSubmit = (data) => {
-    navigate("/main");
-    login(data);
+    login(data).then((result) => {
+      if (result && result.success) {
+        navigate("/home");
+      }
+    });
   };
 
   return (

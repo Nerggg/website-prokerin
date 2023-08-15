@@ -15,8 +15,12 @@ function SignUp() {
 
   const onSubmit = (data) => {
     console.log(data);
-    register(data);
-    // navigate("/main");
+    register(data).then((result) => {
+      console.log(result);
+      if (result && result?.success) {
+        navigate("/signin");
+      }
+    });
   };
 
   return (
